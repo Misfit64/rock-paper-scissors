@@ -11,13 +11,38 @@ function getComputerChoice(){
     }
 }
 
-    let button = document.querySelectorAll("button");
-    function choice(e){
-        let humanSelection = e.target.className;
-        let computerSelection = getComputerChoice();
-        playRound(humanSelection, computerSelection);
+function updateDisplay(humanSelection, computerSelection){
+    let humanDisplayChoice = document.querySelector("span#humanChoice");
+    let computerDisplayChoice = document.querySelector("span#computerChoice");
+    humanDisplayChoice.textContent = humanSelection;
+    computerDisplayChoice.textContent = computerSelection;
+
+    let humanDisplayScore = document.querySelector("span#humanScore");
+    let computerDisplayScore = document.querySelector("span#computerScore");
+    humanDisplayScore.textContent = humanScore;
+    computerDisplayScore.textContent = computerScore;
+}
+
+let button = document.querySelectorAll("button");
+function choice(e){
+    let humanSelection = e.target.className;
+    let computerSelection = getComputerChoice();
+
+    playRound(humanSelection, computerSelection);
+    updateDisplay(humanSelection, computerSelection);
+    if(humanScore == 5){
+        result.textContent = "You Win!"
+        button.forEach(btn => btn.removeEventListener("click",choice));
     }
-    button.forEach(btn => btn.addEventListener("click",choice))
+    else if(computerScore == 5){
+        result.textContent = "You Lose!"  
+        button.forEach(btn => btn.removeEventListener("click",choice));
+    }
+
+}
+button.forEach(btn => btn.addEventListener("click",choice))
+
+let humanScore = 0, computerScore = 0;
 
 function playRound(humanChoice,computerChoice){
     let result = document.querySelector("div#result");
@@ -61,22 +86,3 @@ function playRound(humanChoice,computerChoice){
         }
     }
 }
-let humanScore = 0, computerScore = 0;
-
-// function playGame(){
-    
-    
-    // for(let i = 0; i < 5; i++){
-        // const humanSelection = getHumanChoice();
-        // const computerSelection = getComputerChoice();
-        // console.log(humanSelection);
-        // console.log(computerSelection);
-        // playRound(humanSelection, computerSelection);
-        // console.log(`Human Score is ${humanScore}`);
-        // console.log(`Computer Score is ${computerScore}`);
-    // }
-// }
-
-
-
-// playGame();
