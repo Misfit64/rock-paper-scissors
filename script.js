@@ -30,13 +30,15 @@ function choice(e){
 
     playRound(humanSelection, computerSelection);
     updateDisplay(humanSelection, computerSelection);
-    if(humanScore == 5){
-        result.textContent = "You Win!"
+    if(humanScore == 5 || computerScore == 5){
+        if(humanScore == 5){
+            result.textContent = "You Win!"
+        }
+        else if(computerScore == 5){
+            result.textContent = "You Lose!"  
+        }
         button.forEach(btn => btn.removeEventListener("click",choice));
-    }
-    else if(computerScore == 5){
-        result.textContent = "You Lose!"  
-        button.forEach(btn => btn.removeEventListener("click",choice));
+        document.querySelector("div.container").classList.toggle("hidden");
     }
 
 }

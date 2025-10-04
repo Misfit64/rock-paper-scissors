@@ -3,19 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
 <body>
-    <button class="rock">Rock</button>
-    <button class="paper">Paper</button>
-    <button class="scissors">Scissors</button>
-    <div class="choice">
-        <div id="humanChoice">Your Choice is <span id="humanChoice"></span></div>
-        <div id="computerChoice">Computer Choice is <span id="computerChoice"></span></div>
-    </div>
-    <div class="score">
-        <div id="humanScore">Human Score : <span id="humanScore">0</span></div>
-        <div id="computerScore">Computer Score : <span id="computerScore">0</span></div>
+    <div class="container">
+        <div class="button">
+            <button class="rock">Rock</button>
+            <button class="paper">Paper</button>
+            <button class="scissors">Scissors</button>
+        </div>
+        <div class="choice">
+            <div id="humanChoice">Your Choice is <span id="humanChoice">_____</span></div>
+            <div id="computerChoice">Computer Choice is <span id="computerChoice">____</span></div>
+        </div>
+        <div class="score">
+            <div id="humanScore">Human Score : <span id="humanScore">0</span></div>
+            <div id="computerScore">Computer Score : <span id="computerScore">0</span></div>
+        </div>
     </div>
     <div id="result"></div>
     <script src="script.js"></script>
