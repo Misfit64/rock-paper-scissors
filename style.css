@@ -56,3 +56,12 @@ span#computerScore{
 .hidden{
     display: none !important;
 }
+
+.win {
+    font-size: 100px !important;
+}
+
+.retry {
+    align-self: center;
+    padding: 10px 30px;
+}

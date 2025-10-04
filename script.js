@@ -39,6 +39,13 @@ function choice(e){
         }
         button.forEach(btn => btn.removeEventListener("click",choice));
         document.querySelector("div.container").classList.toggle("hidden");
+        result.classList.toggle("win");
+        
+        let retry = document.createElement("button");
+        retry.classList.add("retry");
+        retry.textContent = "Play Again";
+        result.after(retry);
+        retry.addEventListener("click",() => {location.reload()});
     }
 
 }
